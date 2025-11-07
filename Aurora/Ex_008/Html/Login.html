@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="Styles/Login_Style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="img/logo.png" class="logo" alt="Logo">
+    </div>
+    <div class="right">
+      <form id="formLogin">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <div class="password-container">
+          <input type="password" id="loginSenha" placeholder="Senha" required>
+          <button type="button" id="toggleLoginSenha"
+            onclick="togglePassword('loginSenha', 'toggleLoginSenha')">🙈</button>
+        </div>
+
+        <button type="submit" class="btn">Entrar</button>
+      </form>
+      <br>
+      <div class="register-link">
+        <a href="registro.html">Ainda não tem conta? Criar conta</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="Scripts/Script.js"></script>
+</body>
+
+</html>

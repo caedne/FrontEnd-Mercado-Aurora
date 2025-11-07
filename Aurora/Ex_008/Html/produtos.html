@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mercado Aurora - Produtos</title>
+  <link rel="stylesheet" href="Styles/produtos.css">
+   <link rel="stylesheet" href="Styles/responsive-styles.css">
+  <script src="Scripts/produtos.js" defer></script>
+</head>
+<body>
+
+ <header>
+  <img src="img/logo.png" class="logo" alt="Logo">
+  <div>
+    <h1 class="h1">Mercado Aurora</h1>
+    <p>Bons produtos com baixo custo!</p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="produtos.html" class="active">Produtos</a></li>
+      <li><a href="quemsomos.html">Quem Somos</a></li>
+      <li><a href="contatos.html">Contatos</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="carrinho.html">🛒 Carrinho (<span id="contador-carrinho">0</span>)</a></li>
+            <li><a href="perfil.html" class="active">
+          <div id="usuario-logado"></div>
+        </a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Confira nossas ofertas fresquinhas:</h2>
+    
+    <div class="filtros-container">
+      <div class="filtros">
+        <button class="filtro-btn active" data-categoria="todos">Todos</button>
+        <button class="filtro-btn" data-categoria="frutas">Frutas</button>
+        <button class="filtro-btn" data-categoria="legumes">Legumes</button>
+        <button class="filtro-btn" data-categoria="verduras">Verduras</button>
+        <button class="filtro-btn" data-categoria="outros">Outros</button>
+      </div>
+      
+      <div class="ordenacao">
+        <label for="ordenar">Ordenar por:</label>
+        <select id="ordenar">
+          <option value="nome">Nome</option>
+          <option value="preco-menor">Menor Preço</option>
+          <option value="preco-maior">Maior Preço</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="produtos-container" id="produtos-container">
+      <div class="produto" data-categoria="legumes" data-id="tomate">
+        <div class="produto-imagem">
+          <img src="img/2149125235.jpg" alt="Tomate">
+          <div class="produto-badge">Oferta!</div>
+        </div>
+        <div class="produto-info">
+          <h3>Tomate</h3>
+          <p class="produto-descricao">Tomate maduro e suculento, ideal para saladas e molhos</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 3,99</span>
+            <span class="preco-anterior">R$ 4,49</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="tomate">-</button>
+            <input type="number" id="qtd-tomate" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="tomate">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="tomate">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="frutas" data-id="laranja">
+        <div class="produto-imagem">
+          <img src="img/2147830511.jpg" alt="Laranja">
+        </div>
+        <div class="produto-info">
+          <h3>Laranja</h3>
+          <p class="produto-descricao">Laranja doce e suculenta, rica em vitamina C</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 2,49</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="laranja">-</button>
+            <input type="number" id="qtd-laranja" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="laranja">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="laranja">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="legumes" data-id="batata">
+        <div class="produto-imagem">
+          <img src="img/15862.jpg" alt="Batata">
+        </div>
+        <div class="produto-info">
+          <h3>Batata</h3>
+          <p class="produto-descricao">Batata inglesa fresquinha, perfeita para qualquer preparo</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 3,49</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="batata">-</button>
+            <input type="number" id="qtd-batata" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="batata">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="batata">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="frutas" data-id="banana">
+        <div class="produto-imagem">
+          <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=300&h=300&fit=crop" alt="Banana">
+          <div class="produto-badge new">Novidade!</div>
+        </div>
+        <div class="produto-info">
+          <h3>Banana Prata</h3>
+          <p class="produto-descricao">Banana prata doce e madura, fonte de potássio</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 4,99</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="banana">-</button>
+            <input type="number" id="qtd-banana" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="banana">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="banana">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="verduras" data-id="alface">
+        <div class="produto-imagem">
+          <img src="https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=300&h=300&fit=crop" alt="Alface">
+        </div>
+        <div class="produto-info">
+          <h3>Alface Americana</h3>
+          <p class="produto-descricao">Alface crocante e fresquinha, direto da horta</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 2,99</span>
+            <span class="unidade">/unidade</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="alface">-</button>
+            <input type="number" id="qtd-alface" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="alface">+</button>
+            <span class="kg-label">un</span>
+          </div>
+          <button class="btn-adicionar" data-produto="alface">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="legumes" data-id="cenoura">
+        <div class="produto-imagem">
+          <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=300&h=300&fit=crop" alt="Cenoura">
+        </div>
+        <div class="produto-info">
+          <h3>Cenoura</h3>
+          <p class="produto-descricao">Cenoura doce e crocante, rica em betacaroteno</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 3,29</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="cenoura">-</button>
+            <input type="number" id="qtd-cenoura" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="cenoura">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="cenoura">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+    <div class="produto" data-categoria="legumes" data-id="cebola">
+        <div class="produto-imagem">
+          <img src="img/cebola.jpg" alt="Cebola">
+        </div>
+        <div class="produto-info">
+          <h3>Cebola</h3>
+          <p class="produto-descricao">Cebola forte e rica em sabor!</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 2,50</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="cebola">-</button>
+            <input type="number" id="qtd-cebola" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="cebola">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="cebola">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+    <div class="produto" data-categoria="legumes" data-id="pimentão vermelho">
+        <div class="produto-imagem">
+          <img src="img/pimentão vermelho.jpg" alt="Pimentão Vermelho">
+        </div>
+        <div class="produto-info">
+          <h3>Pimentão Vermelho</h3>
+          <p class="produto-descricao">Pimenta forte e saborosa!</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 2,00</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="pimentão vermelho">-</button>
+            <input type="number" id="qtd-pimentão vermelho" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="pimentão vermelho">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="pimentão vermelho">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+    <div class="produto" data-categoria="legumes" data-id="feijão">
+        <div class="produto-imagem">
+          <img src="img/feijão.jpg" alt="Feijão">
+        </div>
+        <div class="produto-info">
+          <h3>Feijão</h3>
+          <p class="produto-descricao">Feijão suculento e rico em carboidratos</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 3,20</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="feijão">-</button>
+            <input type="number" id="qtd-feijão" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="feijão">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="feijão">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+    <div class="produto" data-categoria="legumes" data-id="ervilha">
+        <div class="produto-imagem">
+          <img src="img/ervilha.jpg" alt="Ervilha">
+        </div>
+        <div class="produto-info">
+          <h3>Ervilha</h3>
+          <p class="produto-descricao">Ervilhas tenras e verdinhas, com textura delicada.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 2,00</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="ervilha">-</button>
+            <input type="number" id="qtd-ervilha" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="ervilha">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="ervilha">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="fruta" data-id="uva">
+        <div class="produto-imagem">
+          <img src="img/uva.jpg" alt="Uva">
+        </div>
+        <div class="produto-info">
+          <h3>Uva</h3>
+          <p class="produto-descricao">Uvas frescas, doces e suculentas.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 1,50</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="uva">-</button>
+            <input type="number" id="qtd-uva" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="uva">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="uva">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="fruta" data-id="maçã">
+        <div class="produto-imagem">
+          <img src="img/maçã.jpg" alt="Maçã">
+        </div>
+        <div class="produto-info">
+          <h3>Maçã</h3>
+          <p class="produto-descricao">Maçãs firmes e aromáticas, com crocância irresistível.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 2,00</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="maçã">-</button>
+            <input type="number" id="qtd-maçã" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="maçã">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="maçã">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="verdura" data-id="brócolis">
+        <div class="produto-imagem">
+          <img src="img/brócolis.jpg" alt="Brócolis">
+        </div>
+        <div class="produto-info">
+          <h3>Brócolis</h3>
+          <p class="produto-descricao">Brócolis de buquês verdes e compactos, sabor suave e nutritivo.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 1,50</span>
+            <span class="unidade">/kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="brócolis">-</button>
+            <input type="number" id="qtd-brócolis" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="brócolis">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="brócolis">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="verdura" data-id="couve-flor">
+        <div class="produto-imagem">
+          <img src="img/uva.jpg" alt="Couve-Flor">
+        </div>
+        <div class="produto-info">
+          <h3>Couve-Flor</h3>
+          <p class="produto-descricao">Couve-flor clara e consistente, de sabor delicado.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 3,00</span>
+            <span class="unidade">/unidade</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="couve-flor">-</button>
+            <input type="number" id="qtd-couve-flor" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="couve-flor">+</button>
+            <span class="kg-label">unidade</span>
+          </div>
+          <button class="btn-adicionar" data-produto="couve-flor">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="verdura" data-id="repolho">
+        <div class="produto-imagem">
+          <img src="img/repolho.jpg" alt="repolho">
+        </div>
+        <div class="produto-info">
+          <h3>Repolho</h3>
+          <p class="produto-descricao">Repolho fresco, folhas densas e crocantes.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 3,00</span>
+            <span class="unidade">/unidade</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="repolho">-</button>
+            <input type="number" id="qtd-repolho" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="repolho">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="repolho">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="verdura" data-id="couve manteiga">
+        <div class="produto-imagem">
+          <img src="img/couve manteiga.png" alt="Couve manteiga">
+        </div>
+        <div class="produto-info">
+          <h3>Couve Manteiga</h3>
+          <p class="produto-descricao">Couve manteiga de folhas verdes e macias, rica em sabor.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 3,20</span>
+            <span class="unidade">/unidade</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="couve manteiga">-</button>
+            <input type="number" id="qtd-couve manteiga" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="couve manteiga">+</button>
+            <span class="kg-label">unidade</span>
+          </div>
+          <button class="btn-adicionar" data-produto="couve manteiga">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="verduras" data-id="rúcula">
+        <div class="produto-imagem">
+          <img src="img/rúcula.png" alt="Rúcula">
+        </div>
+        <div class="produto-info">
+          <h3>Rúcula</h3>
+          <p class="produto-descricao">Rúcula fresca, folhas verdes e sabor levemente picante.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 1,20</span>
+            <span class="unidade">kg</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="rúcula">-</button>
+            <input type="number" id="qtd-rúcula" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="rúcula">+</button>
+            <span class="kg-label">kg</span>
+          </div>
+          <button class="btn-adicionar" data-produto="rúcula">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+      <div class="produto" data-categoria="outros" data-id="queijo colonial">
+        <div class="produto-imagem">
+          <img src="img/queijo colonial.jpg" alt="Queijo Colonial">
+        </div>
+        <div class="produto-info">
+          <h3>Queijo Colonial</h3>
+          <p class="produto-descricao">Queijo colonial artesanal, sabor marcante e textura cremosa.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 4,00</span>
+            <span class="unidade">/unidade</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="queijo colonial">-</button>
+            <input type="number" id="qtd-quijo colonial" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="queijo colonial">+</button>
+            <span class="kg-label">unidade</span>
+          </div>
+          <button class="btn-adicionar" data-produto="quijo colonial">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+            <div class="produto" data-categoria="verdura" data-id="leite">
+        <div class="produto-imagem">
+          <img src="img/leite.jpg" alt="Leite">
+        </div>
+        <div class="produto-info">
+          <h3>Leite</h3>
+          <p class="produto-descricao">Leite fresco e puro, fonte natural de cálcio e proteínas.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 4,00</span>
+            <span class="unidade">/unidade</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="leite">-</button>
+            <input type="number" id="qtd-leite" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="leite">+</button>
+            <span class="kg-label">unidade</span>
+          </div>
+          <button class="btn-adicionar" data-produto="leite">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+            <div class="produto" data-categoria="verdura" data-id="ovo">
+        <div class="produto-imagem">
+          <img src="img/ovo.jpg" alt="Ovo">
+        </div>
+        <div class="produto-info">
+          <h3>Ovo</h3>
+          <p class="produto-descricao">Ovos selecionados, ricos em nutrientes e versáteis na cozinha.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 0,20</span>
+            <span class="unidade">/unidade</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="ovo">-</button>
+            <input type="number" id="qtd-ovo" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="ovo">+</button>
+            <span class="kg-label">unidade</span>
+          </div>
+          <button class="btn-adicionar" data-produto="ovo">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+            <div class="produto" data-categoria="verdura" data-id="geléia">
+        <div class="produto-imagem">
+          <img src="img/geléia.jpg" alt="Geléia">
+        </div>
+        <div class="produto-info">
+          <h3>Geléia</h3>
+          <p class="produto-descricao">Geléia caseira, sabor intenso e textura delicada.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 3,50</span>
+            <span class="unidade">/unidade</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="geléia">-</button>
+            <input type="number" id="qtd-geléia" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="geléia">+</button>
+            <span class="kg-label">unidade</span>
+          </div>
+          <button class="btn-adicionar" data-produto="geléia">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+            <div class="produto" data-categoria="verdura" data-id="azeite de oliva">
+        <div class="produto-imagem">
+          <img src="img/azeite de oliva.jpg" alt="Azeite de Oliva">
+        </div>
+        <div class="produto-info">
+          <h3>Azeite de oliva</h3>
+          <p class="produto-descricao">Azeite de oliva extra virgem, aroma suave e sabor equilibrado.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 4,00</span>
+            <span class="unidade">/unidade</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="azeite de oliva">-</button>
+            <input type="number" id="qtd-azeite de oliva" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="azeite de oliva">+</button>
+            <span class="kg-label">unidade</span>
+          </div>
+          <button class="btn-adicionar" data-produto="azeite de oliva">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+            <div class="produto" data-categoria="verdura" data-id="vinho">
+        <div class="produto-imagem">
+          <img src="img/vinho.jpg" alt="Vinho">
+        </div>
+        <div class="produto-info">
+          <h3>Vinho</h3>
+          <p class="produto-descricao">Vinho de qualidade, corpo elegante e notas aromáticas.</p>
+          <div class="produto-preco">
+            <span class="preco-atual">R$ 12,00</span>
+            <span class="unidade">/unidade</span>
+          </div>
+          <div class="produto-quantidade">
+            <button class="btn-menos" data-produto="vinho">-</button>
+            <input type="number" id="qtd-vinho" min="0" step="1" value="0" class="input-quantidade" readonly>
+            <button class="btn-mais" data-produto="vinho">+</button>
+            <span class="kg-label">unidade</span>
+          </div>
+          <button class="btn-adicionar" data-produto="vinho">
+            🛒 Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="carrinho-flutuante" id="carrinho-flutuante" style="display: none;">
+      <a href="carrinho.html">
+        🛒 Ver Carrinho (<span id="contador-flutuante">0</span>)
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p><b>&copy; 2025 Mercado Aurora. Todos os direitos reservados.</b></p>
+  </footer>
+
+  <script src="js/produtos.js"></script>
+   <script src="Scripts/usuario.js"></script>
+  
+  <!-- Notificação Toast -->
+  <div id="toast" class="toast"></div>
+
+</body>
+</html>

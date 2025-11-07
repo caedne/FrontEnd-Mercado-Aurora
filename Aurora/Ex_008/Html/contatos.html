@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mercado Aurora - Contatos</title>
+  <link rel="stylesheet" href="Styles/contatos.css">
+  <link rel="stylesheet" href="Styles/responsive-styles.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="img/logo.png" class="logo" alt="Logo">
+    </a>
+    <div>
+      <h1>Mercado Aurora</h1>
+      <p>Bons produtos com baixo custo!</p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="produtos.html">Produtos</a></li>
+      <li><a href="quemsomos.html">Quem Somos</a></li>
+      <li><a href="contatos.html">Contatos</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="carrinho.html" class="active">🛒 Carrinho</a></li>
+      <li><a href="perfil.html" class="active">
+          <div id="usuario-logado"></div>
+        </a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Contatos</h2>
+    <p>Endereço: Rua das Hortaliças, 123 – Blumenau, SC</p>
+    <p>Telefone: (47) 99999-0000</p>
+    <p>E-mail: contato@mercadoaurora.com.br</p>
+    <p>Instagram: <a href="#">@mercadoaurora</a></p>
+    <p>Horário de funcionamento: Segunda a sábado, das 8h às 19h</p>
+  </main>
+
+  <main>
+    <form id="form-contato" action="#" method="POST">
+      <div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+
+      <div>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div>
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone">
+      </div>
+
+      <div>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+      </div>
+
+      <div>
+        <button type="submit">Enviar Mensagem</button>
+      </div>
+      <br>
+      
+      <footer>
+        <p><b>&copy; 2025 Mercado Aurora. Todos os direitos reservados.</b></p>
+      </footer>
+
+    </form>
+
+  </main>
+
+
+
+  <!-- script externo -->
+  <script src="Scripts/usuario.js"></script>
+
+</body>
+
+</html>
