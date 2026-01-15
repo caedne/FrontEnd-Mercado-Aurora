@@ -14,4 +14,4 @@ Foco na estruturação de páginas, estilização com CSS e usabilidade.
 - JavaScript (Interações básicas)
 
 ---
-🔗 **Nota:** A versão funcional com Back-end Java e Banco de Dados está no meu outro repositório: https://github.com/caedne/Mercado-Aurora
+🔗 **Nota:** A versão funcional com Back-end Java e Banco de Dados está no meu outro repositório: https://github.com/caedne/ERP-Mercado-Java
